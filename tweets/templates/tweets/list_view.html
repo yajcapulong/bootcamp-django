@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List view</title>
+</head>
+<body>
+{# {{ qs }} #}
+{% for q in object_list %}
+    User: {{ q.user }} <br>
+    Tweet: {{ q.content }} <br>
+    Date: {{ q.createdAt }} <br>
+    Time: {{ q.createdAt | timesince }} ago <br>
+    <br>
+{% endfor %}
+</body>
+</html>
