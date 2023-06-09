@@ -5,11 +5,6 @@
   <title>Title</title>
 </head>
 <body>
-
-<form method="post" class="form">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
-</form>
+{% include 'tweets/form.html' with form=form btn_title='Submit' %}
 </body>
 </html>
