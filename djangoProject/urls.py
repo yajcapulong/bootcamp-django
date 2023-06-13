@@ -8,7 +8,7 @@ from .views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
-    path('tweet/', include('tweets.urls'))
+    path('tweet/', include('tweets.urls', namespace='tweets'))
 ]
 if settings.DEBUG:
     urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

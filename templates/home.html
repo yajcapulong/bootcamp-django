@@ -1,16 +1,9 @@
-{% load static %}
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% block title %}
+    {{ block.super }} | Hello There
+{% endblock %}
 
-<link href="{% static 'static_my_project/css/bootstrap.css' %}" rel="stylesheet">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome</title>
-</head>
-<body>
-Hello World!
-</body>
-<script src="{% static 'static_my_project/js/bootstrap.js' %}" ></script>
-</html>
+{% block content %}
+    <h1>Bonak</h1>
+{% endblock %}

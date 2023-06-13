@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-8 offset-sm-2">
+        {% include 'tweets/search_form.html' %}<br>
+        <div>
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+
+        {% for q in object_list %}
+            <div class="media">
+                {% if q.image %}
+                    <img class="mr-3" src="..." alt="...">
+                {% endif %}
+                    <div class="media-body">
+                        {{ q.content }} <br>
+                        via {{ q.user }} <br>
+                        {{ q.createdAt | timesince }} ago | <a href="{{ q.get_absolute_url }}">View</a><br>
+                        <br>
+                    </div>
+                </div>
+            {% empty %}
+                {% if request.GET.q %}
+                    <li>No Tweets Found</li>
+                {%  else %}
+                    <li>No Tweets Yet</li>
+                {% endif %}
+            {% endfor %}
+</div>
+    </div>
+{% endblock %}

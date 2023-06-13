@@ -1,6 +1,6 @@
 from django.urls import path, re_path
 from .views import *
-app_label = 'tweets'
+app_name = 'tweets'
 
 urlpatterns = [
     path('',  TweetListView.as_view(), name='list_view'),
